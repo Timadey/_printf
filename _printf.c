@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 			 * handle percentage
 			 */
 			i++;
+			if (format[i] == '%')
+				_putchar(format[i]);
 			print = get_print(format[i]);
 			if(print)
 				count = print(arg);
