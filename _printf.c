@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0;
 	int count;
+	int (*print)(va_list);
 	va_list(arg);
 
 	va_start(arg, format);
@@ -23,7 +24,9 @@ int _printf(const char *format, ...)
 			 * handle percentage
 			 */
 			i++;
-			count += get_print(format[i])(arg);
+			print = get_print(format[i]);
+			if(print)
+				count = print(arg);
 		};
 		i++;
 	};
