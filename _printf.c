@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	while(format[i] != '\0')
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
+			count += _putchar(format[i]);
 		else
 		{
 			/**
@@ -25,10 +25,10 @@ int _printf(const char *format, ...)
 			 */
 			i++;
 			if (format[i] == '%')
-				_putchar(format[i]);
+				count += _putchar(format[i]);
 			print = get_print(format[i]);
 			if(print)
-				count = print(arg);
+				count += print(arg);
 		};
 		i++;
 	};

@@ -9,8 +9,10 @@
 int (*get_print(char c))(va_list arg)
 {
 	if (c == 'c')
-		return (pr_char);
+		return(pr_char);
 	if (c == 's')
-		return (pr_string);
+		return(pr_string);
+	if (c == 'd')
+		return(pr_int);
 	return (NULL);
 }
