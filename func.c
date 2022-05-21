@@ -22,7 +22,7 @@ int pr_in_base(unsigned int num, unsigned int base)
 /**
  * pr_in_base - a function that calls pr_in_base_adv with default value
  * @num: the number
- * @base: base to convert string to
+ * @base: base to convert int to
  * Return: a pointer to pr_in_base
  */
 int pr_in_base(unsigned int num, unsigned int base)
@@ -32,7 +32,8 @@ int pr_in_base(unsigned int num, unsigned int base)
 
 /**
  * pr_in_base_adv - advanced print in base
- * Provides the starting alphabet of hexadecimal format
+ * Coverts an unsigned integer to string in a particular base and prints it
+ * Provides the starting ascii code in hex argument for hexadecimal format
  * @num: the number
  * @base: the base
  * @hex: the starting point to add hexadecimal ascii code
