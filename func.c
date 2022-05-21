@@ -5,15 +5,15 @@
  * @num: the number
  * Return: a pointer to the converted string
  */
-char *num_to_str(int num)
+char *num_to_str(unsigned int num, unsigned int base)
 {
 	char *str;
-	int n = num;
+	unsigned int n = num;
 	int len = 1;
 
-	while (n > 9)
+	while (n > (base - 1))
 	{
-		n /= 10;
+		n /= base;
 		len++;
 	};
 	str = malloc(len * sizeof(char));
@@ -28,8 +28,8 @@ char *num_to_str(int num)
 		len--;
 		while (len > -1)
 		{
-			str[len] = '0'+ (num % 10);
-			num /= 10;
+			str[len] = '0'+ (num % base);
+			num /= base;
 			len--;
 		};
 	};
@@ -46,7 +46,7 @@ int pr_str(char *str)
 	int count = 0;
 
 	if(!str)
-		str = "(nil)";
+		str = "(null)";
 	while(str[count] != '\0')
 	{
 		_putchar(str[count]);

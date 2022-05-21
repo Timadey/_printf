@@ -12,7 +12,9 @@ int (*get_print(char c))(va_list arg)
 		return(pr_char);
 	if (c == 's')
 		return(pr_string);
-	if (c == 'd')
-		return(pr_dec);
+	if (c == 'd' || c == 'i')
+		return(pr_int);
+	if (c == 'b')
+		return(pr_binary);
 	return (NULL);
 }
