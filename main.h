@@ -2,13 +2,14 @@
 #define _MAIN_H_
 #include <stdarg.h>
 /**
- * sypnosis functions
+ * driving functions
  */
 int _putchar(char c);
 int _printf(const char *format, ...);
 int (*g_print(char))(va_list);
 /**
  * functions that handles printing for a specifier
+ * defined in 'print.c'
  */
 int pr_char(va_list);
 int pr_string(va_list);
@@ -17,10 +18,13 @@ int pr_unsigned_int(va_list);
 int pr_octal(va_list);
 int pr_binary(va_list);
 int pr_hex(va_list);
+int pr_hex_adv(va_list);
 /**
- * custom functions
+ * core functions
+ * defined in 'func.c'
  */
 int pr_in_base(unsigned int, unsigned int);
+int pr_in_base_adv(unsigned int, unsigned int, char);
 char *num_to_str(unsigned int, unsigned int);
 int pr_str(char *);
 /**

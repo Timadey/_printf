@@ -6,7 +6,7 @@
  * @num: number to print
  * @base: base to print it
  * Return: number of character printed
- */
+ *
 int pr_in_base(unsigned int num, unsigned int base)
 {
 	int count = 0;
@@ -17,17 +17,33 @@ int pr_in_base(unsigned int num, unsigned int base)
 	free(num_str);
 	return(count);
 }
+*/
 
 /**
- * num_to_str - converts an unsigned int to string in a particular base
+ * pr_in_base - a function that calls pr_in_base_adv with default value
  * @num: the number
  * @base: base to convert string to
- * Return: a pointer to the converted string
+ * Return: a pointer to pr_in_base
  */
-char *num_to_str(unsigned int num, unsigned int base)
+int pr_in_base(unsigned int num, unsigned int base)
+{
+	return (pr_in_base_adv(num, base, 87));
+}
+
+/**
+ * pr_in_base_adv - advanced print in base
+ * Provides the starting alphabet of hexadecimal format
+ * @num: the number
+ * @base: the base
+ * @hex: the starting point to add hexadecimal ascii code
+ * Return: count of character printed to stdout
+ */
+int pr_in_base_adv(unsigned int num, unsigned int base, char hex)
 {
 	char *str;
 	unsigned int n = num;
+	unsigned int rem = 0;
+	int count = 0;
 	int len = 1;
 
 	while (n > (base - 1))
@@ -47,12 +63,15 @@ char *num_to_str(unsigned int num, unsigned int base)
 		len--;
 		while (len > -1)
 		{
-			str[len] = '0'+ (num % base);
+			rem = num % base;
+			str[len] = (rem < 10 ? '0' : hex) + rem;
 			num /= base;
 			len--;
 		};
 	};
-	return(str);
+	count += pr_str(str);
+	free(str);
+	return(count);
 }
 
 /**

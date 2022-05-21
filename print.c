@@ -5,16 +5,24 @@
 /**
  * pr_hex - prints number in hexadecimal
  * @arg: argument to print
- * Result: no of character printed
+ * Return: no of character printed
  */
 int pr_hex(va_list arg)
 {
 	unsigned int num = va_arg(arg, unsigned int);
 
-	/** 
-	 * need to update num_to_str to convert to hexadecimal
-	 */
 	return(pr_in_base(num, 16));
+}
+/**
+ * pr_hex_adv - prints number in hexadecimal but in uppercase letters
+ * @arg: argument to print
+ * Return: no of character printed
+ */
+int pr_hex_adv(va_list arg)
+{
+	unsigned int num = va_arg(arg, unsigned int);
+
+	return(pr_in_base_adv(num, 16, 55));
 }
 
 /**
@@ -25,6 +33,7 @@ int pr_hex(va_list arg)
 int pr_unsigned_int(va_list arg)
 {
 	unsigned int num = va_arg(arg, unsigned int);
+
 	return(pr_in_base(num, 10));
 }
 
@@ -36,6 +45,7 @@ int pr_unsigned_int(va_list arg)
 int pr_octal(va_list arg)
 {
 	int num = va_arg(arg, int);
+
 	return(pr_in_base(num, 8));
 }
 
@@ -47,6 +57,7 @@ int pr_octal(va_list arg)
 int pr_binary(va_list arg)
 {
 	unsigned int num = va_arg(arg, unsigned int);
+
 	return(pr_in_base(num, 2));
 }
 

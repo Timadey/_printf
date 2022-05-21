@@ -16,11 +16,12 @@ int (*g_print(char c))(va_list arg)
 		{'b', pr_binary},
 		{'u', pr_unsigned_int},
 		{'o', pr_octal},
-		{'x', pr_hex}
+		{'x', pr_hex},
+		{'X', pr_hex_adv}
 	};
 	int i = 0;
 
-	for(i = 0; i < 8; i++)
+	for(i = 0; i < 9; i++)
 	{
 		if(specifier[i].c == c)
 		{
