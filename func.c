@@ -1,8 +1,27 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
- * num_to_str - converts an unsigned int to string
+ * pr_in_base - prints an integer in a particular base
+ * @num: number to print
+ * @base: base to print it
+ * Return: number of character printed
+ */
+int pr_in_base(unsigned int num, unsigned int base)
+{
+	int count = 0;
+	char *num_str;
+
+	num_str = num_to_str(num, base);
+	count += pr_str(num_str);
+	free(num_str);
+	return(count);
+}
+
+/**
+ * num_to_str - converts an unsigned int to string in a particular base
  * @num: the number
+ * @base: base to convert string to
  * Return: a pointer to the converted string
  */
 char *num_to_str(unsigned int num, unsigned int base)

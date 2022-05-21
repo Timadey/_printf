@@ -3,15 +3,53 @@
 #include "main.h"
 #include <stdio.h>
 /**
+ * pr_hex - prints number in hexadecimal
+ * @arg: argument to print
+ * Result: no of character printed
+ */
+int pr_hex(va_list arg)
+{
+	unsigned int num = va_arg(arg, unsigned int);
+
+	/** 
+	 * need to update num_to_str to convert to hexadecimal
+	 */
+	return(pr_in_base(num, 16));
+}
+
+/**
+ * pr_unsigned_int - handles printing for unsigned int
+ * @arg: the argument to print
+ * Return: no of character printed
+ */
+int pr_unsigned_int(va_list arg)
+{
+	unsigned int num = va_arg(arg, unsigned int);
+	return(pr_in_base(num, 10));
+}
+
+/**
+ * pr_octal - prints number in octal form
+ * @arg: argument to print
+ * Return: num of character printed
+ */
+int pr_octal(va_list arg)
+{
+	int num = va_arg(arg, int);
+	return(pr_in_base(num, 8));
+}
+
+/**
  * pr_binary - prints number in binary
  * @arg: the argument
  * Return: num of character printed
  */
 int pr_binary(va_list arg)
 {
-	unsigned int num = va_arg(arg, int);
+	unsigned int num = va_arg(arg, unsigned int);
 	return(pr_in_base(num, 2));
 }
+
 /**
  * pr_int - handles integer printing for printf
  * @arg; argument to print
@@ -19,30 +57,15 @@ int pr_binary(va_list arg)
  */
 int pr_int(va_list arg)
 {
-	int num = va_arg(arg, int);
-	return(pr_in_base(num, 10));
-}
-
-/**
- * pr_in_base - prints an integer in a particular base
- * @num: number to print
- * @base: base to print it
- * Return: number of character printed
- */
-int pr_in_base(int num, unsigned int base)
-{
 	int count = 0;
-	char *num_str;
+	int num = va_arg(arg, int);
 
 	if (num < 0)
 	{
 		count += _putchar('-');
 		num = num * -1;
 	};
-	num_str = num_to_str(num, base);
-	count += pr_str(num_str);
-	free(num_str);
-	return(count);
+	return(pr_in_base(num, 10));
 }
 
 /**

@@ -2,19 +2,30 @@
 #include <stddef.h>
 #include "main.h"
 /**
- * get_print - get the print function for a format
+ * g_print - get the print function for a format
  * @c: the character representing the format
  * Return: the pointer to that function
  */
-int (*get_print(char c))(va_list arg)
+int (*g_print(char c))(va_list arg)
 {
-	if (c == 'c')
-		return(pr_char);
-	if (c == 's')
-		return(pr_string);
-	if (c == 'd' || c == 'i')
-		return(pr_int);
-	if (c == 'b')
-		return(pr_binary);
-	return (NULL);
+	print specifier[] = {
+		{'c', pr_char},
+		{'s', pr_string},
+		{'d', pr_int},
+		{'i', pr_int},
+		{'b', pr_binary},
+		{'u', pr_unsigned_int},
+		{'o', pr_octal},
+		{'x', pr_hex}
+	};
+	int i = 0;
+
+	for(i = 0; i < 8; i++)
+	{
+		if(specifier[i].c == c)
+		{
+			return(specifier[i].func);
+		}
+	};
+	return(NULL);
 }
