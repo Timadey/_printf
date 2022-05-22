@@ -1,5 +1,5 @@
 # _printf
-Project done during Software Engineering program @holbertonSchool
+Project done during Software Engineering program @holbertonschool
 
 # SYPNOSIS
 `#include "main.h"`
