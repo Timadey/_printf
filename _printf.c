@@ -26,9 +26,14 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '%')
 				count += _putchar(format[i]);
-			print = g_print(format[i]);
-			if(print)
-				count += print(arg);
+			else
+			{
+				print = g_print(format[i]);
+				if(print)
+					count += print(arg);
+				else
+					count = count + _putchar('%') + _putchar(format[i]);
+			}
 		};
 		i++;
 	};

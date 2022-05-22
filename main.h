@@ -19,12 +19,13 @@ int pr_octal(va_list);
 int pr_binary(va_list);
 int pr_hex(va_list);
 int pr_hex_adv(va_list);
+int pr_address(va_list);
 /**
  * core functions
  * defined in 'func.c'
  */
-int pr_in_base(unsigned int, unsigned int);
-int pr_in_base_adv(unsigned int, unsigned int, char);
+int pr_in_base(unsigned long, unsigned int);
+int pr_in_base_adv(unsigned long, unsigned int, char);
 char *num_to_str(unsigned int, unsigned int);
 int pr_str(char *);
 /**

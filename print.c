@@ -1,7 +1,20 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "main.h"
-#include <stdio.h>
+/**
+ * pr_address - handles address printing for printf
+ * @arg: address to print
+ * Return: num of character printed
+ */
+int pr_address(va_list arg)
+{
+	unsigned long add = va_arg(arg, unsigned long);
+	int count = 0;
+
+	count += pr_str("0x");
+	count += pr_in_base(add, 16);
+	return(count);
+}
 /**
  * pr_hex - prints number in hexadecimal
  * @arg: argument to print
@@ -44,7 +57,7 @@ int pr_unsigned_int(va_list arg)
  */
 int pr_octal(va_list arg)
 {
-	int num = va_arg(arg, int);
+	unsigned int num = va_arg(arg, unsigned int);
 
 	return(pr_in_base(num, 8));
 }

@@ -25,7 +25,7 @@ int pr_in_base(unsigned int num, unsigned int base)
  * @base: base to convert int to
  * Return: a pointer to pr_in_base
  */
-int pr_in_base(unsigned int num, unsigned int base)
+int pr_in_base(unsigned long num, unsigned int base)
 {
 	return (pr_in_base_adv(num, base, 87));
 }
@@ -39,10 +39,10 @@ int pr_in_base(unsigned int num, unsigned int base)
  * @hex: the starting point to add hexadecimal ascii code
  * Return: count of character printed to stdout
  */
-int pr_in_base_adv(unsigned int num, unsigned int base, char hex)
+int pr_in_base_adv(unsigned long num, unsigned int base, char hex)
 {
 	char *str;
-	unsigned int n = num;
+	unsigned long n = num;
 	unsigned int rem = 0;
 	int count = 0;
 	int len = 1;
