@@ -1,4 +1,5 @@
 # _printf
+Project done during Software Engineering program @holbertonSchool
 
 # SYPNOSIS
 `#include "main.h"`
@@ -8,23 +9,23 @@
 `#include <stdarg.h>`
 
 
-`int pr_char(va_list);`
-`int pr_string(va_list);`
-`int pr_int(va_list);`
-`int pr_unsigned_int(va_list);`
-`int pr_octal(va_list);`
-`int pr_binary(va_list);`
-`int pr_hex(va_list);`
-`int pr_hex_adv(va_list);`
+`int pr_char(va_list);` <br>
+`int pr_string(va_list);` <br>
+`int pr_int(va_list);` <br>
+`int pr_unsigned_int(va_list);` <br>
+`int pr_octal(va_list);` <br>
+`int pr_binary(va_list);` <br>
+`int pr_hex(va_list);` <br>
+`int pr_hex_adv(va_list);` <br>
 `int pr_address(va_list);`
 
 # DESCRIPTION
-The _printf function, with the help of other functions, produces output according to a format. This function writes to the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of stdarg(3)) are converted for output.
+The _printf function, with the help of other functions, produces output according to a format. This function writes to the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of `stdarg(3)`) are converted for output.
 
 # CONVERSION SPECIFIER
 A character that specifies the type of conversion to be applied. The conversion specifiers and their meaning are:
 
-- d, i ***
+- d, i <br>
 The int argument is converted to signed decimal notation.
  The precision, if any, gives the minimum number of digits
  that must appear; if the converted value requires fewer
