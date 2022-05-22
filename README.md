@@ -25,7 +25,7 @@ The _printf function, with the help of other functions, produces output accordin
 # CONVERSION SPECIFIER
 A character that specifies the type of conversion to be applied. The conversion specifiers and their meaning are:
 
-- d, i <br>
+- `d, i` <br>
 The int argument is converted to signed decimal notation.
  The precision, if any, gives the minimum number of digits
  that must appear; if the converted value requires fewer
@@ -33,7 +33,7 @@ The int argument is converted to signed decimal notation.
  precision is 1.  When 0 is printed with an explicit
  precision 0, the output is empty.
 ***
-- o, u, x, X <br>
+- `o, u, x, X` <br>
 The unsigned int argument is converted to unsigned octal
  (o), unsigned decimal (u), or unsigned hexadecimal (x and
  X) notation.  The letters abcdef are used for x
@@ -44,22 +44,22 @@ The unsigned int argument is converted to unsigned octal
  zeros.  The default precision is 1.  When 0 is printed
  with an explicit precision 0, the output is empty.
 ***
-- c <br>
+- `c` <br>
 If no l modifier is present, the int argument is converted
  to an unsigned char, and the resulting character is
  written.
 ***
-- s <br>
+- `s` <br>
 If no l modifier is present: the const char * argument is
  expected to be a pointer to an array of character type
  (pointer to a string).  Characters from the array are
  written up to (but not including) a terminating null byte
  ('\0');
 ***
-- p <br>
+- `p` <br>
 The void * pointer argument is printed in hexadecimal
 ***
-- % <br>
+- `%` <br>
 A '%' is written.  No argument is converted.  The complete
  conversion specification is '%%'.
 **
